@@ -16,6 +16,8 @@
 <body style="width:700px; margin:auto; margin-top:60px; font-size:16px;">
 	<h1>TetsTunes</h1>
 <a href="tracklist.csv">CSV of all Songs</a>
+<br/><br/>
+<a href="#" id="randomList">Random Playlist</a>
 <ul>
   <li><a href="2015-08-25.html">8/25/2015</a></li>
   <li><a href="2015-08-24.html">8/24/2015</a></li>
@@ -30,5 +32,13 @@
 
 <hr/>
 <a href="https://docs.google.com/forms/d/1a58RUo8D1sz-MVkv9N4haZWXiCXLaMEQqNr1g-_gGPg/viewform">Feedback</a>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script type="text/javascript">
+$('#randomList').on('click', function(){
+	var days = $('li').find('a');
+	var day = days[Math.floor(Math.random()*days.length)];
+	window.location = $(day).attr('href');
+});
+</script>
 </body>
 </html>
